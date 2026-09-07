@@ -1,0 +1,24 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+header {
+  background-color:aqua;
+}
+
+h1 {
+ color : rgb(0, 0, 0);  
+ font-size: 2em;
+ font-family: "Roboto Mono", monospace;
+ font-weight: 700;
+ font-style: normal;
+}
+
+h2 {
+ color : rgb(0, 0, 0);  
+ font-size: 1.5em;
+ font-family: "Roboto Mono", monospace;
+ font-weight: 700;
+ font-style: normal;
+}
+
+
