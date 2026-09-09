@@ -1,0 +1,19 @@
+name: Validar HTML y CSS
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validar:
+    name: Lint y Validación
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Validar archivos HTML
+        run: npx html-validate "**/*.html"
