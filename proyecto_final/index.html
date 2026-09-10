@@ -3,24 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Final</title>
+    <title>FlySky - Wireframe</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
-        <h1>Proyecto Final</h1>
-        <p class="subtitle">Estructura limpia y escalable</p>
+
+    <!-- ==================== HEADER: NAVEGACIÓN ==================== -->
+    <header>
+        <div>
+            <strong>FlySky</strong>
+        </div>
+
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#flights">Buscar vuelo</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#faq">Preguntas frecuentes</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <a href="#signin">Iniciar sesión</a>
+            <a href="#signup">Registrarse</a>
+        </div>
     </header>
 
-    <main class="container">
-        <section class="card">
-            <h2>Bienvenido</h2>
-            <p>Este es el punto de partida para tu entrega final. Tenés la separación adecuada entre estructura HTML, estilos CSS y recursos.</p>
+    <hr>
+
+    <!-- ==================== MAIN: HERO WIREFRAME ==================== -->
+    <main>
+        <section id="home" class="hero">
+            <!-- Columna izquierda: Información y CTA -->
+            <div class="hero-content">
+                <h1>¡Reservá el vuelo de tus sueños en pocos clics!</h1>
+                <p>Encontrá, comparé y reservá tu vuelo ideal en segundos. Sin complicaciones, solo tu próxima aventura esperándote.</p>
+                <a href="#flights">Buscar vuelos</a>
+            </div>
+
+            <!-- Columna derecha: Espacio reservado para ilustración -->
+            <div class="hero-visual">
+                <p>[Espacio para Ilustración: Avión sobrevolando paisaje]</p>
+            </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2026 - Práctica Web</p>
+    <hr>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <p>&copy; 2026 FlySky. Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>
