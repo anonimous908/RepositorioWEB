@@ -16,6 +16,7 @@ El repositorio está organizado como un espacio de prácticas con múltiples pro
 | :--- | :--- |
 | [**Proyecto1**](./Proyecto1/) | Práctica inicial de fundamentos HTML y tipografía básica. |
 | [**Proyecto2**](./Proyecto2/) | Maquetación multipágina con navegación y diseño de interfaces. |
+| [**Proyecto3**](./Proyecto3/) | Página de producto REDMAGIC 11 Pro con tipografía web y layout flexible. |
 | [**proyecto_final**](./proyecto_final/) | Base modular para la integración final de la práctica web. |
 
 ```text
@@ -28,6 +29,11 @@ RepositorioWEB/
 │   ├── contacto.html
 │   ├── nosotros.html
 │   ├── css/
+│   └── img/
+├── Proyecto3/
+│   ├── index.html
+│   ├── css/
+│   │   └── style.css
 │   └── img/
 └── proyecto_final/
     ├── index.html
