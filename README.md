@@ -4,7 +4,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
-Prácticas de desarrollo web frontend, estructurados de forma modular e independiente para el aprendizaje progresivo de **HTML5** y **CSS3**.
+Prácticas de desarrollo web frontend, estructuradas de forma modular e independiente para el aprendizaje progresivo de **HTML5** y **CSS3**.
 
 ---
 
@@ -17,7 +17,7 @@ El repositorio está organizado como un espacio de prácticas con múltiples pro
 | [**Proyecto1**](./Proyecto1/) | Práctica inicial de fundamentos HTML y tipografía básica. |
 | [**Proyecto2**](./Proyecto2/) | Maquetación multipágina con navegación y diseño de interfaces. |
 | [**Proyecto3**](./Proyecto3/) | Página de producto REDMAGIC 11 Pro con tipografía web y layout flexible. |
-| [**proyecto_final**](./proyecto_final/) | Base modular para la integración final de la práctica web. |
+| [**proyecto_final**](./proyecto_final/) | Plataforma web multipágina de aerolínea **VuelAS** con búsqueda de vuelos, información institucional y preguntas frecuentes. |
 
 ```text
 RepositorioWEB/
@@ -37,6 +37,9 @@ RepositorioWEB/
 │   └── img/
 └── proyecto_final/
     ├── index.html
+    ├── buscarvuelos.html
+    ├── nosotros.html
+    ├── preguntas.html
     ├── css/
     │   └── style.css
     └── img/
@@ -53,7 +56,7 @@ RepositorioWEB/
 
 2. **Abrir en el navegador:**
    - Podés abrir directamente el archivo `index.html` del proyecto que desees inspeccionar en tu navegador favorito.
-   - O utilizar una extensión como **Live Server** en Visual Studio Code para recarga en caliente.
+   - O utilizar un servidor local (como la extensión **Live Server** en Visual Studio Code o `python -m http.server`) para recarga y navegación completa.
 
 ---
 
