@@ -34,28 +34,7 @@ nav a.activo {
     font-weight: 700;
 }
 
-.botones {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.login {
-    text-decoration: none;
-    color: #0f172a;
-    font-weight: 600;
-}
-
-.registro {
-    text-decoration: none;
-    background-color: #e0ecfd;
-    color: #2563eb;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-weight: 600;
-}
-
-/* 2. Estructura del Hero */
+/* 2. Estructura del Hero y Secciones */
 .hero {
     display: flex;
     align-items: center;
@@ -70,7 +49,8 @@ nav a.activo {
     flex: 1;
 }
 
-.hero h1 {
+.hero h1,
+.hero h2 {
     font-size: 3rem;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -84,7 +64,7 @@ nav a.activo {
     margin-bottom: 2rem;
 }
 
-.hero .btn {
+.btn {
     display: inline-block;
     background-color: #2563eb;
     color: #ffffff;
@@ -92,6 +72,10 @@ nav a.activo {
     padding: 0.8rem 1.6rem;
     border-radius: 6px;
     font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.95rem;
 }
 
 .hero img {
@@ -101,7 +85,68 @@ nav a.activo {
     height: auto;
 }
 
-/* 3. Estructura del Footer */
+/* 3. Estructura de Buscar Vuelos */
+.contenedor-vuelos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+}
+
+.lista-vuelos {
+    margin-bottom: 3rem;
+}
+
+.lista-vuelos h2 {
+    font-size: 2rem;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+}
+
+.tarjeta-vuelo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-vuelo .etiqueta {
+    display: inline-block;
+    background: #e0ecfd;
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.3rem;
+}
+
+.tarjeta-vuelo h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.2rem;
+}
+
+.tarjeta-vuelo p {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.tarjeta-vuelo .precio {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.tarjeta-vuelo .precio span {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+/* 4. Estructura del Footer */
 footer {
     text-align: center;
     padding: 2rem;
