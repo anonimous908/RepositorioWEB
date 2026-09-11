@@ -1,53 +1,110 @@
-/* ===== RESET MÍNIMO ===== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
 }
 
-/* ===== NAVBAR: logo | links | auth en una fila ===== */
 header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid #ccc;
+    align-items: center;
+    padding: 1.5rem 3rem;
 }
 
-nav ul {
+.logo {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #0f172a;
+}
+
+nav {
     display: flex;
-    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+nav a.activo {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.botones {
+    display: flex;
+    align-items: center;
     gap: 1.5rem;
 }
 
-/* ===== HERO: dos columnas ===== */
+.login {
+    text-decoration: none;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.registro {
+    text-decoration: none;
+    background-color: #e0ecfd;
+    color: #2563eb;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* 2. Estructura del Hero */
 .hero {
     display: flex;
-    gap: 2rem;
-    padding: 3rem 2rem;
-    min-height: 80vh;
     align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    gap: 3rem;
 }
 
-.hero-content {
+.hero .texto {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
-.hero-visual {
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #64748b;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    display: inline-block;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.hero img {
     flex: 1;
-    min-height: 300px;
-    border: 2px dashed #aaa; /* placeholder visual */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
 }
 
-/* ===== FOOTER ===== */
+/* 3. Estructura del Footer */
 footer {
-    padding: 1rem 2rem;
-    border-top: 1px solid #ccc;
     text-align: center;
+    padding: 2rem;
+    color: #94a3b8;
+    font-size: 0.85rem;
 }
