@@ -48,6 +48,25 @@ Cada práctica cuenta con una estructura modular limpia:
 
 ---
 
+## 📋 Estado de las Carpetas
+
+### ✅ Con Contenido
+- **Unidad 1:**
+  - `practica1/`: Fundamentos HTML y tipografía básica.
+  - `practica2/`: Sitio multipágina con navegación y recursos visuales.
+  - `practica3/`: Página de producto REDMAGIC 11 Pro.
+  - `proyectofinal1/`: Plataforma web de aerolínea **VuelAS** (4 páginas).
+- **Unidad 2:**
+  - `practica1/`: Maquetación con contenedores flexibles y capturas multimedia.
+
+### ⏳ Sin Contenido (Plantilla Base)
+- **Unidad 1:** `practica4/`
+- **Unidad 2:** `practica2/`, `practica3/`, `practica4/`, `proyectofinal2/`
+- **Unidad 3:** `practica1/`, `practica2/`, `practica3/`, `practica4/`, `proyectofinal3/`
+- **Unidad 4:** `practica1/`, `practica2/`, `practica3/`, `practica4/`, `proyectofinal4/`
+
+---
+
 ## 🚀 Cómo Visualizar los Proyectos
 
 1. **Clonar el repositorio:**
