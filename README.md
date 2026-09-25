@@ -4,46 +4,47 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
-Prácticas de desarrollo web frontend, estructuradas de forma modular e independiente para el aprendizaje progresivo de **HTML5** y **CSS3**.
+Prácticas de desarrollo web frontend, estructuradas de forma modular e independiente para el aprendizaje progresivo de **HTML5** y **CSS3**, organizadas por unidades temáticas.
 
 ---
 
 ## 📂 Estructura del Repositorio
 
-El repositorio está organizado como un espacio de prácticas con múltiples proyectos autónomos:
-
-| Proyecto | Descripción |
-| :--- | :--- |
-| [**Proyecto1**](./Proyecto1/) | Práctica inicial de fundamentos HTML y tipografía básica. |
-| [**Proyecto2**](./Proyecto2/) | Maquetación multipágina con navegación y diseño de interfaces. |
-| [**Proyecto3**](./Proyecto3/) | Página de producto REDMAGIC 11 Pro con tipografía web y layout flexible. |
-| [**proyecto_final**](./proyecto_final/) | Plataforma web multipágina de aerolínea **VuelAS** con búsqueda de vuelos, información institucional y preguntas frecuentes. |
-
 ```text
 RepositorioWEB/
-├── Proyecto1/
-│   ├── index.html
-│   └── style.css
-├── Proyecto2/
-│   ├── index.html
-│   ├── contacto.html
-│   ├── nosotros.html
-│   ├── css/
-│   └── img/
-├── Proyecto3/
-│   ├── index.html
-│   ├── css/
-│   │   └── style.css
-│   └── img/
-└── proyecto_final/
-    ├── index.html
-    ├── buscarvuelos.html
-    ├── nosotros.html
-    ├── preguntas.html
-    ├── css/
-    │   └── style.css
-    └── img/
+├── .github/
+│   └── workflows/
+│       └── lint.yml
+├── Unidad1/
+│   ├── practica1/
+│   ├── practica2/
+│   ├── practica3/
+│   ├── practica4/
+│   └── proyectofinal1/
+├── Unidad2/
+│   ├── practica1/
+│   ├── practica2/
+│   ├── practica3/
+│   ├── practica4/
+│   └── proyectofinal2/
+├── Unidad3/
+│   ├── practica1/
+│   ├── practica2/
+│   ├── practica3/
+│   ├── practica4/
+│   └── proyectofinal3/
+└── Unidad4/
+    ├── practica1/
+    ├── practica2/
+    ├── practica3/
+    ├── practica4/
+    └── proyectofinal4/
 ```
+
+Cada práctica cuenta con una estructura modular limpia:
+- `index.html`: Estructura semántica HTML5.
+- `css/style.css`: Hoja de estilos vinculada.
+- `img/`: Directorio dedicado para recursos visuales.
 
 ---
 
@@ -54,9 +55,9 @@ RepositorioWEB/
    git clone https://github.com/anonimous908/RepositorioWEB.git
    ```
 
-2. **Abrir en el navegador:**
-   - Podés abrir directamente el archivo `index.html` del proyecto que desees inspeccionar en tu navegador favorito.
-   - O utilizar un servidor local (como la extensión **Live Server** en Visual Studio Code o `python -m http.server`) para recarga y navegación completa.
+2. **Abrir en el editor o navegador:**
+   - Podés abrir directamente el archivo `index.html` de la práctica o proyecto deseado en tu navegador.
+   - O ejecutar un servidor de desarrollo local (como **Live Server** en VS Code / WebStorm o `python -m http.server`).
 
 ---
 
