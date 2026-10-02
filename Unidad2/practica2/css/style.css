@@ -1,0 +1,156 @@
+body{
+    background-color: #f8f1fc;
+    color: #0f172a;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+padding: 2rem;
+ transition: background-color 0.4s, color 0.4s ease;
+}
+body.modo-oscuro{
+    background-color: #0f172a;
+    color: #f8f1fc;
+}
+/*codigo para la navegación*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap:  1.5rem;
+}
+nav a{
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: inherit; /* Hereda el color del texto del cuerpo */
+    padding: 1rem;
+    border-radius: 4px;
+    transition: color 0.3s ease;
+}
+nav a:hover{
+    color: #8b5cf6;
+}
+.boton-modo-oscuro{
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid currentColor;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+/* Estilo para las tarjetas en modo oscuro */
+body.modo-oscuro .tarjeta {
+    background-color: #1b2335;
+    border-color: #272e3f;
+}
+/* Estilo para las tarjetas en modo claro */
+.tarjeta {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px #00000026;
+}
+
+.tarjeta img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    background-color: #e2e8f0;
+}
+
+.tarjeta h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.tarjeta p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/*codigo 2*/
+.padre{
+  display: flex;
+  justify-content: space-between;
+    flex-wrap: wrap;
+}
+.hijo{
+  height: 10rem;
+    width: 10rem;
+    border-radius: 15px;
+}
+:root{
+ --amarillo:  #facc15;
+    --rojo:  #ef4444;
+ --verde:  #00fd33;
+ --cafe:  #a16207;
+ --rosa :  #ff3dff;
+    --azul:  #3b82f6;
+    --naranja:  #f97316;
+}
+.padre.modo_transparente {
+--amarillo:  #e0e4102c;
+    --rojo:  #ef44442c;
+    --verde:  #00fd332c;
+    --cafe:  #583c1a2c;
+    --rosa:  #ff3dff2c;
+    --azul:  #3b82f62c;
+    --naranja: #f973162c;
+}
+#btn_cambio2{
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: #0fff;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+#btn_cambio2:hover{
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+.amarillo{
+    background-color: var(--amarillo);
+}
+.rojo{
+    background-color: var(--rojo);
+}
+.rosa{
+    background-color: var(--rosa);
+}
+.naranja{
+    background-color: var(--naranja);
+}
+.verde{
+    background-color: var(--verde);
+}
+.cafe{
+    background-color: var(--cafe);
+}
+.azul{
+    background-color: var(--azul);
+}
