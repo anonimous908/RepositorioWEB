@@ -1,0 +1,28 @@
+.DBT {
+  cursor: pointer;
+}
+
+.DBT:hover{
+ background-color: lightblue;
+}
+.YENP:hover{
+ background-color: lightgreen;
+}
+.CGL:hover{
+ background-color: lightcoral;
+}
+.CFGE:hover{
+    background-color: lightyellow;
+}
+.KJR:hover{
+    background-color: lightpink;
+}
+.JDL:hover{
+    background-color: lightgray;
+}
+.ECS:hover{
+    background-color: lightgreen;
+}
+.KYVA:hover{
+    background: #1e3a8a;
+}
