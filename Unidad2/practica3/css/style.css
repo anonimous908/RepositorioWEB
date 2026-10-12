@@ -2,27 +2,63 @@
   cursor: pointer;
 }
 
-.DBT:hover{
- background-color: lightblue;
+.DBT:hover {
+  background-color: lightblue;
 }
-.YENP:hover{
- background-color: lightgreen;
+.YENP:hover {
+  background-color: lightgreen;
 }
-.CGL:hover{
- background-color: lightcoral;
+.CGL:hover {
+  background-color: lightcoral;
 }
-.CFGE:hover{
-    background-color: lightyellow;
+.CFGE:hover {
+  background-color: lightyellow;
 }
-.KJR:hover{
-    background-color: lightpink;
+.KJR:hover {
+  background-color: lightpink;
 }
-.JDL:hover{
-    background-color: lightgray;
+.JDL:hover {
+  background-color: lightgray;
 }
-.ECS:hover{
-    background-color: lightgreen;
+.ECS:hover {
+  background-color: lightgreen;
 }
-.KYVA:hover{
-    background: #1e3a8a;
+.KYVA:hover {
+  background-color: plum;
 }
+
+/* Nuevos hovers */
+.DBT.activo:hover {
+  background-color: tomato;
+}
+
+.YENP.activo:hover {
+  background-color: mediumpurple;
+}
+
+.CGL.activo:hover {
+  background-color: yellow;
+}
+
+.CFGE.activo:hover {
+  background-color: orange;
+}
+
+.KJR.activo:hover {
+  background-color: deepskyblue;
+}
+
+.JDL.activo:hover {
+  background-color: slateblue;
+}
+
+.ECS.activo:hover {
+  background-color: mediumseagreen;
+}
+
+.KYVA.activo:hover {
+  background-color: crimson;
+}
+
+
+

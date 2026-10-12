@@ -1,7 +1,11 @@
-const dbt = document.querySelector(".DBT");
+const boton = document.getElementById("btnCambiar");
+const cajas = document.querySelectorAll(".caja");
 
-if (dbt) {
-  dbt.addEventListener("click", () => {
-    dbt.style.backgroundColor = "red";
+if (boton) {
+  boton.addEventListener("click", () => {
+    cajas.forEach((caja) => {
+      caja.classList.toggle("activo");
+    });
   });
 }
+
