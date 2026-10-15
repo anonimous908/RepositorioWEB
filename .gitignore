@@ -1,0 +1,17 @@
+# IDEs y editores
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Dependencias y builds
+node_modules/
+dist/
+build/
+.vite/
+
+# Archivos del sistema y temporales
+.DS_Store
+Thumbs.db
+*.log
+
