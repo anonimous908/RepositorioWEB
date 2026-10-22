@@ -1,0 +1,229 @@
+:root{
+    --amarillo: #e1e410;
+    --verde: #00fd33;
+    --cafe: #583c1a;
+    --rosa: #ff3dff;
+    --rojo: #ed0808;
+    --azul: #0522df;
+    --naranja: #f88000;
+    --txtcolor: #151515;
+    --bgcolor: #fffafa;
+}
+body.modo_transparente {
+  --amarillo: #e0e4102c;
+  --verde: #00fd332c;
+  --cafe: #583c1a2c;
+  --rosa: #ff3dff2c;
+  --rojo: #ed08082c;
+  --azul: #0522df2c;
+  --naranja: #f880002c;
+  --txtcolor: #f3f1f1;
+  --bgcolor: #1f1a1a;
+}
+body{
+    background-color: var(--bgcolor);
+    color: var(--txtcolor);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+.div_flex{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;    
+    flex-wrap: wrap;
+}
+.div_flexhijo{
+    height: 15rem;
+    width: 28%;
+    border-radius: 15px;
+    padding: 1rem;
+    transition: transform 0.5s ease-in-out;
+
+    display: flex;
+    justify-content: center;    
+}
+.div_flexhijo img{
+    width: 100%;
+    border-radius: 15px;   
+}
+.amarillo{
+    background-color: var(--amarillo);
+}
+.rojo{
+    background-color: var(--rojo);
+}
+.rosa{
+    background-color: var(--rosa);
+} 
+.naranja{
+    background-color: var(--naranja);
+}
+.verde{
+    background-color: var(--verde);
+}  
+.azul{
+    background-color: var(--azul);
+}    
+.cafe{
+    background-color: var(--cafe);
+}
+.formulario{
+    width: 90%;
+    display: flex;    
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0rem;
+}
+label{
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--txtcolor);
+}
+input, textarea{
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 0px;
+    border-radius: 0px;
+    font-size: 1.2rem;
+    font-family: arial;
+    border-bottom: 2px solid var(--rosa);
+    background: inherit;
+    padding: 15px 0px;
+}
+input::placeholder,
+textarea::placeholder {
+    color: var(--rosa);
+    font-size: 1rem;
+    opacity: 1;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--rosa);
+    opacity: 1;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--rosa);
+    opacity: 1;
+}
+input:focus-visible,
+textarea:focus-visible {
+    outline: none !important;
+}
+input[type="submit"]{
+    background-color: var(--rosa);
+    color: var(--bgcolor);
+    border: 2px solid var(--rosa);
+    border-radius: 10px;
+    padding: 1rem 0rem;
+    transition: all 1s ease;
+
+}
+input[type="submit"]:hover{
+    background-color: var(--bgcolor)!important;
+    color: var(--rosa)!important;
+    cursor: pointer;
+}
+h1{
+    color: var(--txtcolor);
+    font-size: 3rem;
+}
+.btn{
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    background-color: var(--bgcolor);
+    color: var(--txtcolor);
+    border-radius: 10px;
+    border: 1px solid var(--txtcolor);
+    transition: background-color 0.5s ease-in-out;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: var(--bgcolor);
+    color: var(--txtcolor);
+    border-radius: 10px;
+    border: 1px solid var(--txtcolor);
+}   
+p{
+    color: var(--txtcolor);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+header{
+    padding: 1rem;
+    text-align: center;
+}
+#respuesta{
+    font-size: 1rem;
+    color: var(--txtcolor);
+    height: 4rem;
+    width: 100%;
+    text-align: center;
+}
+.div_main{
+    text-align: center;
+    margin: 2rem 0rem 4rem 0rem;
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* La imagen tiene una transición suave por defecto */
+#miImagen2 {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
+/* Clase que aplicaremos con JavaScript para ocultar la imagen */
+.oculto {
+    opacity: 0;
+}
+
+#miImagen4, #miImagen6 {
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+}
+#miImagen6:hover {
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 40px #0e82e0);
+    transition: filter 1s ease; /* Hace que el cambio sea suave */
+}
+
+@media screen and (max-width: 1024px) {
+    .div_flexhijo{
+        width: 45%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .div_flexhijo{
+        width: 75%;
+    }
+    .div_flex{
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 480px) {
+    .div_flexhijo{
+        width: 90%;
+    }
+    .formulario{
+        width: 98%;
+    }
+    h1{
+        font-size: 1.7rem;
+    }
+    p, label, input, textarea, .btn{
+        font-size: 1rem;
+    }
+
+}

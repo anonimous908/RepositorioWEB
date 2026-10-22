@@ -1,12 +1,65 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unidad 2 - Práctica 4</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Práctica completo</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>PRÁCTICA COMPLETA DE JAVASCRIPT Y CSS</h1>
+        </header>
+        <div class="div_main">
+            <p>Esta es una práctica completa de JavaScript y CSS, 
+                donde se aplican los conocimientos adquiridos 
+                en el curso de desarrollo web. A continuación, se 
+                presentan diferentes secciones que demuestran el uso de 
+                estilos CSS y funcionalidades de JavaScript.    
+                </p>
+            <button class="btn" id="btn_modo">Cambiar estilo</button>
+        </div>
+        <div class="div_flex" id="div_padre">
+            <div class="div_flexhijo amarillo">
+                <img src="img/imagen1.jpg" alt="Imagen 1" id="miImagen1">
+            </div>
+            <div class="div_flexhijo verde">
+                <img src="img/imagen2.jpg" alt="Imagen 2" id="miImagen2">
+            </div>
+            <div class="div_flexhijo azul">
+                <img src="img/imagen3.jpg" alt="Imagen 3" id="miImagen3">
+            </div>
+            <div class="formulario">
+                <form id="formulario" action="#" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+                    <br>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico">
+                    <br>
+                    <label for="pass">Contraseña:</label>
+                    <input type="password" id="pass" name="pass" placeholder="Ingrese su contraseña">
+                    <br>
+                    <label for="cel">Número de teléfono:</label>
+                    <input type="tel" id="cel" name="cel" placeholder="Ingrese su número de teléfono">
+                    <br>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Ingrese su mensaje"></textarea>
+                    <br>
+                    <input type="submit" value="Enviar formulario">
+                    <div class="respuesta" id="respuesta"></div>
+                </form>
+            </div>
+            <div class="div_flexhijo cafe">
+                <img src="img/imagen1.jpg" alt="Imagen 1" id="miImagen4">
+            </div>
+            <div class="div_flexhijo naranja">
+                <img src="img/imagen2.jpg" alt="Imagen 2" id="miImagen5">
+            </div>
+            <div class="div_flexhijo rojo">
+                <img src="img/imagen3.jpg" alt="Imagen 3" id="miImagen6">
+            </div>
+        </div>
+        <script src="js/function.js"></script>
+    </body>
 </html>
