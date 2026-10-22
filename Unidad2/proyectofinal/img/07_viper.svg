@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="postit-shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="3" dy="5" stdDeviation="5" flood-color="#334155" flood-opacity="0.18"/>
+    </filter>
+    <marker id="pen-arrow" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 1 2 L 9 6 L 1 10 C 3 6 3 6 1 2 Z" fill="#1e3a8a"/>
+    </marker>
+    <marker id="red-arrow" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 1 2 L 9 6 L 1 10 C 3 6 3 6 1 2 Z" fill="#b91c1c"/>
+    </marker>
+    <marker id="green-arrow" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 1 2 L 9 6 L 1 10 C 3 6 3 6 1 2 Z" fill="#047857"/>
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1.2" opacity="0.6"/>
+    </pattern>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Kalam:wght@400;700&amp;family=Patrick+Hand&amp;display=swap');
+      .title { font-family: 'Kalam', 'Caveat', cursive; font-size: 25px; font-weight: 700; fill: #0f172a; }
+      .subtitle { font-family: 'Patrick Hand', 'Caveat', cursive; font-size: 15px; fill: #64748b; }
+      .pen { font-family: 'Patrick Hand', 'Caveat', cursive; fill: #1e3a8a; font-size: 18px; }
+      .pen-lg { font-family: 'Kalam', 'Caveat', cursive; fill: #172554; font-size: 22px; font-weight: 700; }
+      .pencil { font-family: 'Patrick Hand', 'Caveat', cursive; fill: #334155; font-size: 17px; }
+      .pencil-sm { font-family: 'Patrick Hand', 'Caveat', cursive; fill: #475569; font-size: 14.5px; }
+      .red-pen { font-family: 'Patrick Hand', 'Caveat', cursive; fill: #b91c1c; font-size: 16.5px; font-weight: 700; }
+      .green-pen { font-family: 'Patrick Hand', 'Caveat', cursive; fill: #047857; font-size: 17px; font-weight: 700; }
+      .bubble { fill: #ffffff; fill-opacity: 1; stroke: #1e3a8a; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .bubble-double { fill: none; stroke: #1e3a8a; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; opacity: 0.6; }
+      .box { fill: #ffffff; fill-opacity: 1; stroke: #1e3a8a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-pen { fill: none; stroke: #1e3a8a; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-pencil { fill: none; stroke: #475569; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-red { fill: none; stroke: #b91c1c; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .highlight-yellow { fill: #fef08a; fill-opacity: 0.85; rx: 4px; }
+      .highlight-blue { fill: #bae6fd; fill-opacity: 0.85; rx: 4px; }
+      .highlight-green { fill: #bbf7d0; fill-opacity: 0.85; rx: 4px; }
+      .highlight-rose { fill: #fecdd3; fill-opacity: 0.85; rx: 4px; }
+      .tape { fill: #fed7aa; fill-opacity: 0.85; stroke: #fdba74; stroke-width: 0.8; }
+    </style>
+  </defs>
+
+  <!-- Title top left -->
+  <g transform="translate(40, 38)">
+    <text x="0" y="0" class="title">7. VIPER: Los 5 empleados de la oficina</text>
+    <text x="0" y="22" class="subtitle">Recepcionista, Gerente, Obrero, Papeles y Chofer: cada uno hace lo suyo</text>
+  </g>
+
+  <!-- Sticky Note top right -->
+  <g transform="translate(725, 20) rotate(2)" filter="url(#postit-shadow)">
+    <rect x="0" y="0" width="210" height="155" fill="#fef9c3" stroke="#fef08a" stroke-width="1" rx="3"/>
+    <rect x="70" y="-8" width="70" height="18" class="tape" rx="2" transform="rotate(-3 100 0)"/>
+    <text x="15" y="25" class="pen" font-weight="bold" font-size="14" fill="#854d0e">💡 EN PALABRAS SIMPLES:</text>
+    
+    <text x="15" y="48" class="pencil" font-size="13">"Máxima división del</text>
+    <text x="15" y="68" class="pencil" font-size="13">trabajo: cada persona hace</text>
+    <text x="15" y="88" class="pencil" font-size="13">una sola tarea. Cero</text>
+    <text x="15" y="108" class="pencil" font-size="13">confusiones, pero muchos</text>
+    <text x="15" y="128" class="pencil" font-size="13">puestos contratados."</text>
+
+  </g>
+
+  
+  <!-- Top Row: View <-> Presenter <-> Interactor -->
+  <g transform="translate(30, 95)">
+    <!-- VIEW (Left) -->
+    <path d="M 5 35 C 5 10, 65 5, 145 8 C 190 10, 205 25, 195 50 C 180 75, 105 80, 35 75 C 5 68, 5 50, 5 35 Z" class="bubble" stroke-width="2.5"/>
+    <rect x="30" y="22" width="140" height="28" class="highlight-blue"/>
+    <text x="100" y="43" class="pen-lg" text-anchor="middle">1. Recepcionista</text>
+    <text x="100" y="95" class="pencil-sm" text-anchor="middle">• Atiende al cliente</text>
+    <text x="100" y="116" class="pencil-sm" text-anchor="middle">• Muestra los folletos</text>
+
+    <!-- Arrows View <-> Presenter -->
+    <path d="M 200 38 C 220 35, 235 35, 255 38" class="stroke-pen" stroke-width="2.3" marker-end="url(#pen-arrow)"/>
+    <text x="228" y="30" class="pencil-sm" text-anchor="middle">Preguntas</text>
+
+    <path d="M 255 58 C 235 60, 220 60, 200 58" class="stroke-pen" stroke-width="2.3" marker-end="url(#pen-arrow)"/>
+    <text x="228" y="75" class="pencil-sm" text-anchor="middle">Respuestas</text>
+
+    <!-- PRESENTER (Center Hub) -->
+    <path d="M 260 35 C 260 10, 335 5, 420 8 C 470 10, 485 25, 475 50 C 460 75, 375 80, 300 75 C 260 68, 260 50, 260 35 Z" class="bubble" stroke-width="2.8" fill="#fef08a" fill-opacity="0.5"/>
+    <rect x="290" y="22" width="165" height="28" class="highlight-yellow"/>
+    <text x="372" y="43" class="pen-lg" text-anchor="middle">2. El Gerente</text>
+    <text x="372" y="95" class="pencil-sm" text-anchor="middle">• Coordina a todos</text>
+    <text x="372" y="116" class="pencil-sm" text-anchor="middle">• Reparte el trabajo</text>
+
+    <!-- Arrows Presenter <-> Interactor -->
+    <path d="M 480 38 C 500 35, 515 35, 535 38" class="stroke-pen" stroke-width="2.3" marker-end="url(#pen-arrow)"/>
+    <text x="507" y="30" class="pencil-sm" text-anchor="middle">Pide cálculo</text>
+
+    <path d="M 535 58 C 515 60, 500 60, 480 58" class="stroke-pen" stroke-width="2.3" marker-end="url(#pen-arrow)"/>
+    <text x="507" y="75" class="pencil-sm" text-anchor="middle">Resultado</text>
+
+    <!-- INTERACTOR (Right) -->
+    <path d="M 540 35 C 540 10, 600 5, 665 8 C 700 10, 715 25, 705 50 C 690 75, 625 80, 565 75 C 540 68, 540 50, 540 35 Z" class="bubble" stroke-width="2.5"/>
+    <rect x="565" y="22" width="130" height="28" class="highlight-green"/>
+    <text x="630" y="43" class="green-pen" font-size="20" text-anchor="middle">3. El Obrero</text>
+    <text x="630" y="95" class="pencil-sm" text-anchor="middle">• Hace las cuentas</text>
+    <text x="630" y="116" class="pencil-sm" text-anchor="middle">• Busca en el archivo</text>
+  </g>
+
+  <!-- Bottom Row: Router & Entity -->
+  <g transform="translate(30, 290)">
+    <!-- Arrow Presenter down to Router -->
+    <path d="M 402 -45 C 402 -10, 402 10, 402 40" class="stroke-red" stroke-width="2.5" marker-end="url(#red-arrow)"/>
+    
+    <!-- Router Box (Center Bottom) -->
+    <rect x="300" y="45" width="205" height="75" class="box" stroke="#b91c1c" stroke-width="2.4"/>
+    <rect x="310" y="55" width="185" height="26" class="highlight-rose"/>
+    <text x="402" y="75" class="red-pen" font-size="19" text-anchor="middle">5. El Chofer (Router)</text>
+    <text x="402" y="100" class="pencil-sm" text-anchor="middle">Lleva al cliente a la otra oficina</text>
+
+    <!-- Arrow Interactor down to Entity -->
+    <path d="M 630 -45 C 630 -10, 630 10, 630 40" class="stroke-pen" stroke-width="2.5" marker-end="url(#pen-arrow)"/>
+    
+    <!-- Entity Box (Right Bottom) -->
+    <rect x="530" y="45" width="200" height="75" class="box" stroke-width="2.4"/>
+    <rect x="540" y="55" width="180" height="26" class="highlight-yellow"/>
+    <text x="630" y="75" class="pen-lg" text-anchor="middle">4. Los Papeles (Entity)</text>
+    <text x="630" y="100" class="pencil-sm" text-anchor="middle">Los datos limpios del archivo</text>
+  </g>
+
+  <!-- Bottom Trade-off Analysis -->
+  <g transform="translate(75, 450)">
+    <rect x="15" y="0" width="845" height="150" class="bubble" fill="#f8fafc" stroke-width="2.4"/>
+    <rect x="30" y="12" width="260" height="28" class="highlight-yellow"/>
+    <text x="40" y="33" class="pen-lg" font-size="20">⚖️ La Balanza de VIPER:</text>
+
+    <g transform="translate(40, 55)">
+      <text x="0" y="15" class="green-pen" font-size="16">✅ LO BUENO (La Paz Mental):</text>
+      <text x="15" y="38" class="pencil-sm">• Cada archivo hace una sola cosa: facilísimo de testear</text>
+      <text x="15" y="58" class="pencil-sm">• Varios programadores pueden tocar la misma pantalla sin chocarse</text>
+    </g>
+
+    <g transform="translate(480, 55)">
+      <text x="0" y="15" class="red-pen" font-size="16">❌ LO CARO (El Trámite):</text>
+      <text x="15" y="38" class="pencil-sm">• Para cambiar un botón tenés que tocar 5 archivos distintos</text>
+      <text x="15" y="58" class="pencil-sm">• En Android casi nadie lo usa por exceso de burocracia</text>
+    </g>
+  </g>
+
+
+</svg>

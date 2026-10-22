@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="postit-shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="3" dy="5" stdDeviation="5" flood-color="#334155" flood-opacity="0.18"/>
+    </filter>
+    <marker id="pen-arrow" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 1 2 L 9 6 L 1 10 C 3 6 3 6 1 2 Z" fill="#1e3a8a"/>
+    </marker>
+    <marker id="red-arrow" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 1 2 L 9 6 L 1 10 C 3 6 3 6 1 2 Z" fill="#b91c1c"/>
+    </marker>
+    <marker id="green-arrow" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 1 2 L 9 6 L 1 10 C 3 6 3 6 1 2 Z" fill="#047857"/>
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1.2" opacity="0.6"/>
+    </pattern>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Kalam:wght@400;700&amp;family=Patrick+Hand&amp;display=swap');
+      .title { font-family: 'Kalam', 'Caveat', cursive; font-size: 25px; font-weight: 700; fill: #0f172a; }
+      .subtitle { font-family: 'Patrick Hand', 'Caveat', cursive; font-size: 15px; fill: #64748b; }
+      .pen { font-family: 'Patrick Hand', 'Caveat', cursive; fill: #1e3a8a; font-size: 18px; }
+      .pen-lg { font-family: 'Kalam', 'Caveat', cursive; fill: #172554; font-size: 22px; font-weight: 700; }
+      .pencil { font-family: 'Patrick Hand', 'Caveat', cursive; fill: #334155; font-size: 17px; }
+      .pencil-sm { font-family: 'Patrick Hand', 'Caveat', cursive; fill: #475569; font-size: 14.5px; }
+      .red-pen { font-family: 'Patrick Hand', 'Caveat', cursive; fill: #b91c1c; font-size: 16.5px; font-weight: 700; }
+      .green-pen { font-family: 'Patrick Hand', 'Caveat', cursive; fill: #047857; font-size: 17px; font-weight: 700; }
+      .bubble { fill: #ffffff; fill-opacity: 1; stroke: #1e3a8a; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .bubble-double { fill: none; stroke: #1e3a8a; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; opacity: 0.6; }
+      .box { fill: #ffffff; fill-opacity: 1; stroke: #1e3a8a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-pen { fill: none; stroke: #1e3a8a; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-pencil { fill: none; stroke: #475569; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-red { fill: none; stroke: #b91c1c; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .highlight-yellow { fill: #fef08a; fill-opacity: 0.85; rx: 4px; }
+      .highlight-blue { fill: #bae6fd; fill-opacity: 0.85; rx: 4px; }
+      .highlight-green { fill: #bbf7d0; fill-opacity: 0.85; rx: 4px; }
+      .highlight-rose { fill: #fecdd3; fill-opacity: 0.85; rx: 4px; }
+      .tape { fill: #fed7aa; fill-opacity: 0.85; stroke: #fdba74; stroke-width: 0.8; }
+    </style>
+  </defs>
+
+  <!-- Title top left -->
+  <g transform="translate(40, 38)">
+    <text x="0" y="0" class="title">4. Modular: Dividir una app en habitaciones</text>
+    <text x="0" y="22" class="subtitle">Cada función vive en su cuarto independiente; comparten los cimientos</text>
+  </g>
+
+  <!-- Sticky Note top right -->
+  <g transform="translate(725, 20) rotate(2)" filter="url(#postit-shadow)">
+    <rect x="0" y="0" width="210" height="155" fill="#fef9c3" stroke="#fef08a" stroke-width="1" rx="3"/>
+    <rect x="70" y="-8" width="70" height="18" class="tape" rx="2" transform="rotate(-3 100 0)"/>
+    <text x="15" y="25" class="pen" font-weight="bold" font-size="14" fill="#854d0e">💡 EN PALABRAS SIMPLES:</text>
+    
+    <text x="15" y="48" class="pencil" font-size="13">"Cada pieza es un paquete</text>
+    <text x="15" y="68" class="pencil" font-size="13">cerrado. Si modificás el</text>
+    <text x="15" y="88" class="pencil" font-size="13">Perfil, la tienda no tiene</text>
+    <text x="15" y="108" class="pencil" font-size="13">que volver a compilarse</text>
+    <text x="15" y="128" class="green-pen" font-size="13">ni puede romperse."</text>
+
+  </g>
+
+  
+  <!-- Root App Module (Top) -->
+  <g transform="translate(290, 85)">
+    <rect x="0" y="0" width="360" height="65" class="box" stroke-width="2.6" fill="#f8fafc"/>
+    <rect x="15" y="10" width="330" height="24" class="highlight-rose"/>
+    <text x="180" y="28" class="red-pen" font-size="19" text-anchor="middle">📦 EL PEGAMENTO (:app)</text>
+    <text x="180" y="52" class="pencil-sm" text-anchor="middle">Junta todas las habitaciones y las hace arrancar</text>
+  </g>
+
+  <!-- Arrows from App to Features -->
+  <path d="M 370 150 C 370 200, 200 200, 200 240" class="stroke-pen" stroke-width="2.3" marker-end="url(#pen-arrow)"/>
+  <path d="M 470 150 L 470 240" class="stroke-pen" stroke-width="2.3" marker-end="url(#pen-arrow)"/>
+  <path d="M 570 150 C 570 200, 740 200, 740 240" class="stroke-pen" stroke-width="2.3" marker-end="url(#pen-arrow)"/>
+
+  <!-- Middle Row: Features (Independent rooms) -->
+  <g transform="translate(60, 240)">
+    <!-- Room 1: Auth -->
+    <g transform="translate(40, 0)">
+      <rect x="0" y="0" width="220" height="110" class="box" stroke-width="2.2"/>
+      <rect x="10" y="10" width="200" height="26" class="highlight-blue"/>
+      <text x="110" y="28" class="pen-lg" font-size="18" text-anchor="middle">🚪 :feature_entrada</text>
+      <text x="110" y="58" class="pencil" text-anchor="middle">Login y Registro</text>
+      <text x="110" y="80" class="pencil-sm" text-anchor="middle">• No sabe qué hay adentro</text>
+      <text x="110" y="98" class="pencil-sm" text-anchor="middle">• Vive por su cuenta</text>
+    </g>
+
+    <!-- Room 2: Shop -->
+    <g transform="translate(310, 0)">
+      <rect x="0" y="0" width="220" height="110" class="box" stroke-width="2.2"/>
+      <rect x="10" y="10" width="200" height="26" class="highlight-yellow"/>
+      <text x="110" y="28" class="pen-lg" font-size="18" text-anchor="middle">🛒 :feature_tienda</text>
+      <text x="110" y="58" class="pencil" text-anchor="middle">Catálogo y Carrito</text>
+      <text x="110" y="80" class="pencil-sm" text-anchor="middle">• Su propia pantalla</text>
+      <text x="110" y="98" class="pencil-sm" text-anchor="middle">• Sus propios cálculos</text>
+    </g>
+
+    <!-- Room 3: Profile -->
+    <g transform="translate(580, 0)">
+      <rect x="0" y="0" width="220" height="110" class="box" stroke-width="2.2"/>
+      <rect x="10" y="10" width="200" height="26" class="highlight-green"/>
+      <text x="110" y="28" class="pen-lg" font-size="18" text-anchor="middle">👤 :feature_perfil</text>
+      <text x="110" y="58" class="pencil" text-anchor="middle">Datos del Usuario</text>
+      <text x="110" y="80" class="pencil-sm" text-anchor="middle">• Configuración personal</text>
+      <text x="110" y="98" class="pencil-sm" text-anchor="middle">• No toca a la tienda</text>
+    </g>
+  </g>
+
+  <!-- Prohibición: Las habitaciones no se tocan entre sí -->
+  <path d="M 330 295 L 360 295" class="stroke-red" stroke-width="2.5" stroke-dasharray="4,3"/>
+  <text x="345" y="285" class="red-pen" font-size="14" text-anchor="middle">⛔ NO SE TOCAN</text>
+
+  <path d="M 600 295 L 630 295" class="stroke-red" stroke-width="2.5" stroke-dasharray="4,3"/>
+  <text x="615" y="285" class="red-pen" font-size="14" text-anchor="middle">⛔ NO SE TOCAN</text>
+
+  <!-- Arrows from Features down to Foundation -->
+  <path d="M 210 350 C 210 400, 350 420, 420 440" class="stroke-pen" stroke-width="2.3" marker-end="url(#pen-arrow)"/>
+  <path d="M 470 350 L 470 440" class="stroke-pen" stroke-width="2.3" marker-end="url(#pen-arrow)"/>
+  <path d="M 730 350 C 730 400, 590 420, 520 440" class="stroke-pen" stroke-width="2.3" marker-end="url(#pen-arrow)"/>
+
+  <!-- Bottom: Core / Foundation -->
+  <g transform="translate(190, 440)">
+    <rect x="0" y="0" width="560" height="95" class="box" stroke-width="2.6" fill="#f0fdf4"/>
+    <rect x="15" y="10" width="530" height="28" class="highlight-green"/>
+    <text x="280" y="30" class="green-pen" font-size="20" text-anchor="middle">🧱 LOS CIMIENTOS COMUNES (:core_red, :core_diseno)</text>
+    <text x="280" y="60" class="pencil" text-anchor="middle">Lo que todos necesitan: Colores, Botones y Conexión a internet</text>
+    <text x="280" y="80" class="pencil-sm" text-anchor="middle">No conoce a ninguna habitación de arriba, solo presta sus herramientas</text>
+  </g>
+
+
+</svg>
