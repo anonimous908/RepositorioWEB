@@ -1,0 +1,100 @@
+/* ==========================================================================
+   1. TIPOGRAFÍAS (Fuentes variables locales)
+   ========================================================================== */
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('../fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+    font-weight: 300 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+/* ==========================================================================
+   2. VARIABLES DE DISEÑO (Tokens de color y tipografía)
+   ========================================================================== */
+:root {
+    /* Fondos */
+    --bg-main: #070B12;
+    --bg-card: #0E1520;
+
+    /* Textos */
+    --text-main: #A6B2C2;
+    --text-accent: #D4F28A;
+    --text-secondary: #748398;
+    --text-light: #EEF2EC;
+
+    /* Fuentes */
+    --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ==========================================================================
+   3. RESET UNIVERSAL
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================================
+   4. LIENZO BASE (BODY)
+   ========================================================================== */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 24px;
+}
+
+/* ==========================================================================
+   5. CONTENEDOR Y ENCABEZADO
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.section-intro {
+    margin-bottom: 36px;
+}
+
+.section-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    color: var(--text-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--text-light);
+    font-size: clamp(2rem, 3.8vw, 2.85rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+}
+
+.section-description {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    max-width: 620px;
+    line-height: 1.55;
+}
