@@ -1,0 +1,105 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+/* lo de arriba*/
+.navegacion {
+    position: sticky;
+    top: 0;
+    background-color: #faf8f2;
+    padding: 15px 30px;
+    z-index: 100;
+}
+
+.navegacion,
+.enlaces-navegacion,
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #4d6bfe;
+}
+.logo img {
+    width: 35px;
+    height: auto;
+}
+
+.enlaces-navegacion a,
+.logo {
+    text-decoration: none;
+    color: #4d6bfe;
+}
+/* lo de input*/
+.portada {
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #faf8f2; /* Color crema suave */
+}
+
+.portada h1 {
+    text-align: center;
+}
+
+.portada p {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.caja-prompt {
+    width: 100%;
+    max-width: 650px;
+    box-sizing: border-box;
+    margin: 25px auto; /*separa la caja arriba y abajo (para que no quede pegada al párrafo).*/
+    padding: 15px;
+    background-color: #ffffff; /* Blanco para que resalte sobre el fondo crema */
+    border: 1px solid #dcdcdc;
+    border-radius: 16px;
+}
+
+.caja-prompt textarea {
+    width: 100%;
+    border: none;
+    outline: none; /* Sin resaltado de clic */
+    resize: none; /* no mover tamano */
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.acciones-prompt {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.acciones-prompt button {
+    background-color: #4d6bfe;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+/* SECCIÓN 2: Eslogan */
+.eslogan {
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* SECCIÓN 3: Lista de ideas */
+.lista-ideas li {
+    margin-bottom: 10px;
+}
