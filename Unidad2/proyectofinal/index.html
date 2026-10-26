@@ -3,50 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Proyecto Final</title>
+    <title>Inicio - Arquitectura Android</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="activo">Inicio</a>
-        <a href="mvvm.html">MVVM</a>
-        <a href="mvi.html">MVI</a>
-        <a href="clean-architecture.html">Clean Architecture</a>
-        <a href="modular.html">Modular</a>
-        <a href="compose-udf.html">Compose UDF</a>
-        <a href="mvu-redux.html">MVU / Redux</a>
-    </nav>
+    <header>
+        <nav>
+            <a href="index.html" class="activo">Inicio</a>
+            <a href="mvvm.html">MVVM</a>
+            <a href="mvi.html">MVI</a>
+            <a href="clean-architecture.html">Clean Architecture</a>
+            <a href="modular.html">Modular</a>
+            <a href="compose-udf.html">Compose UDF</a>
+            <a href="mvu-redux.html">MVU / Redux</a>
+            <a href="registro.html">Diagnóstico</a>
+        </nav>
+    </header>
 
-    <h1>Domina la arquitectura de aplicaciones android</h1>
+    <main class="container my-5">
+        <div class="row align-items-center g-5">
+            <section class="col-12 col-lg-7">
+                <h1 class="display-6 fw-bold text-dark mb-3">Domina la arquitectura de aplicaciones Android</h1>
 
-    <div class="contenedor-principal">
-        <div class="columna-texto">
-            <div class="subtitulo">
-                <p class="item-ingrediente" >Aprende los principios y patrones de arquitectura </p>
-                <p class="item-ingrediente" >para desarrollar aplicaciones Android robustas y mantenibles.</p>
-                <p class="item-ingrediente"> y de alto rendimiento</p>
-            </div>
+                <p class="lead text-secondary mb-4">Aprende los principios y patrones de arquitectura para desarrollar aplicaciones Android robustas, mantenibles y de alto rendimiento.</p>
 
-            <br>
+                <article class="card border rounded-4 p-4 mb-4 shadow-sm bg-white">
+                    <h2 class="h5 fw-bold text-dark mb-3">¿Por qué son importantes las arquitecturas?</h2>
+                    <ol class="mb-0 text-secondary ps-3">
+                        <li class="mb-2">Más fácil de entender el código.</li>
+                        <li class="mb-2">Exprimir el rendimiento nativo del lenguaje.</li>
+                        <li class="mb-2">Creamos un software escalable.</li>
+                        <li class="mb-2">Más fácil de revisar y testear.</li>
+                        <li>Si algo falla, solo revisas el módulo afectado y no toda la aplicación.</li>
+                    </ol>
+                </article>
 
-            <div class="preparacion">
-                <h2>Preparación</h2>
-                <p>1. Lavar los limones y cortarlos por la mitad.</p>
-                <p>2. Exprimir los 5 limones retirando las semillas.</p>
-                <p>3. Verter el jugo de limón en una jarra con el litro de agua.</p>
-                <p>4. Agregar las 3 cucharadas de azúcar y revolver bien hasta disolver.</p>
-                <p>5. Servir fría con hielo al gusto.</p>
-            </div>
+                <a href="mvvm.html" id="btn_modo" class="btn btn-primary px-4 py-2 fw-semibold shadow-sm">
+                    Comenzar ahora <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </section>
 
-            <br>
-
-            <button id="btn_modo" class="btn">Comanzar ahora </button>
+            <section class="col-12 col-lg-5 text-center">
+                <img id="imagen-visor" class="img-fluid rounded-4 shadow-sm" src="img/index/hero_ilustracion.png" alt="Arquitectura de aplicaciones Android">
+            </section>
         </div>
+    </main>
 
-        <div class="columna-imagen">
-            <img id="imagen-visor" src="img/5_limones.webp" alt="5 limones">
-        </div>
-    </div>
-    <p>Aprende los principios y patrones de arquitectura para desarrollar aplicaciones Android robustas y mantenibles.</p>
+    <footer>
+        <p>Aprende los principios y patrones de arquitectura para desarrollar aplicaciones Android robustas y mantenibles.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
