@@ -1,4 +1,106 @@
-﻿/* Estilos especificos para index.html */
-@import url('style.css');
+/* ==========================================================================
+   Estilos Específicos para index.html (Portada)
+   ========================================================================== */
 
+/* Contenedor Principal en Dos Columnas */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
 
+.columna-texto {
+    flex: 1.2;
+}
+
+.columna-imagen {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.columna-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Tipografía de Portada */
+h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+.subtitulo p {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 1.75rem;
+}
+
+/* Tarjeta de Beneficios */
+.cuerpo {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cuerpo h2 {
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.lista-beneficios {
+    padding-left: 1.5rem;
+    color: #334155;
+}
+
+.lista-beneficios li {
+    margin-bottom: 0.5rem;
+}
+
+/* Botón "Comenzar ahora" (Estilo Stripe Developer) */
+.btn-comenzar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.85rem 1.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-comenzar:hover {
+    background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45);
+}
+
+.btn-comenzar:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+}
+
+.btn-comenzar .icono-flecha {
+    transition: transform 0.2s ease;
+}
+
+.btn-comenzar:hover .icono-flecha {
+    transform: translateX(4px);
+}
