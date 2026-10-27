@@ -143,8 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
             fieldset.classList.remove('border-danger', 'bg-danger-subtle');
             fieldset.classList.add('border-success-subtle');
         }
-        if (e.target.id === 'nivelExperiencia' && e.target.value) {
-            e.target.classList.remove('is-invalid');
+        if ((e.target.id === 'nivelExperiencia' || e.target.name === 'nivelExperiencia') && e.target.value) {
+            selectExperiencia?.classList.remove('is-invalid');
         }
     });
 
@@ -154,6 +154,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Extracción en O(1) con FormData nativo
         const formData = new FormData(form);
         const respuestas = Object.fromEntries(formData.entries());
+        if (!respuestas.nivelExperiencia && selectExperiencia?.value) {
+            respuestas.nivelExperiencia = selectExperiencia.value;
+        }
         let formularioValido = true;
         let primerElementoFaltante = null;
 
