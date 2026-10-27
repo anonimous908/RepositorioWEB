@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico - ¿Qué arquitectura usar en Android?</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/components/app-header.js" defer></script>
+</head>
+<body>
+    <app-header></app-header>
+
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <section class="col-12 col-xl-10">
+                <div class="card shadow-sm border-0 rounded-4 p-4 p-md-5 bg-white mb-4">
+                    <div class="text-center mb-4">
+                        <span class="badge px-3 py-2 rounded-pill text-bg-primary mb-2">Motor de Diagnóstico</span>
+                        <h1 class="h2 fw-bold text-dark">¿Qué arquitectura necesita tu app Android?</h1>
+                        <p class="text-secondary mx-auto" style="max-width: 650px;">
+                            Responde las 20 preguntas del cuestionario de arquitectura. Nuestro evaluador ponderará tus requerimientos contra los 8 patrones más importantes de la industria para recomendarte el ideal.
+                        </p>
+                    </div>
+
+                    <form id="form-diagnostico" novalidate>
+                        <!-- SECCIÓN 1: Escala, Equipo y Proyecto -->
+                        <div class="mb-4">
+                            <h2 class="h5 fw-bold text-dark border-bottom pb-2 mb-3">1. Escala, Equipo y Ciclo de Vida</h2>
+
+                            <!-- P1 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">1. Escala del equipo y fricción en Git/CI:</legend>
+                                <p class="text-muted small mb-2">¿Cuántos ingenieros interactúan sobre el repositorio y cuál es el impacto de bloqueos por merge conflicts o esperas de integración continua?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p1" id="p1_a" value="A" required>
+                                    <label class="form-check-label" for="p1_a">A) 1 a 2 desarrolladores; prototipo o MVP en validación inicial sin fricción de Git.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p1" id="p1_b" value="B">
+                                    <label class="form-check-label" for="p1_b">B) 3 a 7 desarrolladores; producto en crecimiento con UI reactiva y monolito ordenado por paquetes.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p1" id="p1_c" value="C">
+                                    <label class="form-check-label" for="p1_c">C) 8 a 25+ desarrolladores en squads; bloqueos frecuentes en PRs y compilaciones de más de 5 minutos.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p1" id="p1_d" value="D">
+                                    <label class="form-check-label" for="p1_d">D) Equipos grandes que exigen paridad 1:1 con iOS y navegación desacoplada de pantallas.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P2 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">2. Autonomía de equipos y límites de dominio:</legend>
+                                <p class="text-muted small mb-2">¿La organización trabaja con equipos o pantallas que deben modificarse sin interferir con el resto del sistema?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p2" id="p2_a" value="A" required>
+                                    <label class="form-check-label" for="p2_a">A) Un solo equipo general que toca todas las pantallas sin separaciones estrictas.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p2" id="p2_b" value="B">
+                                    <label class="form-check-label" for="p2_b">B) 2 a 3 grupos que comparten utilidades pero desarrollan pantallas separadas.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p2" id="p2_c" value="C">
+                                    <label class="form-check-label" for="p2_c">C) Equipos 100% independientes que no deben ver el código interno de otros módulos.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p2" id="p2_d" value="D">
+                                    <label class="form-check-label" for="p2_d">D) Equipos distribuidos que comparten la lógica de negocio con iOS o Desktop.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P3 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">3. Tiempo de vida del proyecto y velocidad de entrega:</legend>
+                                <p class="text-muted small mb-2">¿Cuál es el horizonte y la prioridad principal de este desarrollo?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p3" id="p3_a" value="A" required>
+                                    <label class="form-check-label" for="p3_a">A) Validar una idea urgente o prototipo en días/semanas; la prioridad es lanzar algo funcional ya.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p3" id="p3_b" value="B">
+                                    <label class="form-check-label" for="p3_b">B) Producto formal en evolución continua durante 1 a 2 años con un equipo pequeño/mediano.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p3" id="p3_c" value="C">
+                                    <label class="form-check-label" for="p3_c">C) Plataforma empresarial crítica para mantenerse 3 a 5+ años con rotación de desarrolladores.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P4 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">4. Curva de aprendizaje e integración de nuevos desarrolladores:</legend>
+                                <p class="text-muted small mb-2">¿Qué prioridad tiene la facilidad para incorporar nuevos desarrolladores al proyecto?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p4" id="p4_a" value="A" required>
+                                    <label class="form-check-label" for="p4_a">A) Alta: queremos que cualquier desarrollador sea productivo desde el día 1 con guías de Google.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p4" id="p4_b" value="B">
+                                    <label class="form-check-label" for="p4_b">B) Media/Baja: el proyecto exige un estándar estricto y rígido con capas obligatorias.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p4" id="p4_c" value="C">
+                                    <label class="form-check-label" for="p4_c">C) El equipo es muy experimentado y busca el máximo control del flujo reactivo.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P5 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">5. Multiplataforma y simetría con iOS:</legend>
+                                <p class="text-muted small mb-2">¿Qué relación tiene este proyecto con una posible versión para iPhone (iOS)?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p5" id="p5_a" value="A" required>
+                                    <label class="form-check-label" for="p5_a">A) Es una app exclusiva de Android; queremos usar las herramientas oficiales estándar de Google.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p5" id="p5_b" value="B">
+                                    <label class="form-check-label" for="p5_b">B) La empresa exige que Android e iOS tengan exactamente las mismas capas y módulos 1 a 1.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p5" id="p5_c" value="C">
+                                    <label class="form-check-label" for="p5_c">C) Queremos compartir la lógica de negocio y red con iOS en Kotlin Multiplatform (KMP).</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p5" id="p5_d" value="D">
+                                    <label class="form-check-label" for="p5_d">D) No hay planes de iOS ni nos preocupan otras plataformas.</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <!-- SECCIÓN 2: Estado, Datos y Tiempo Real -->
+                        <div class="mb-4">
+                            <h2 class="h5 fw-bold text-dark border-bottom pb-2 mb-3">2. Gestión de Estado y Flujo de Datos</h2>
+
+                            <!-- P6 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">6. Concurrencia de estado y prevención de estados inconsistentes:</legend>
+                                <p class="text-muted small mb-2">¿Cómo debe modelarse el estado cuando ocurren múltiples eventos asíncronos a la vez (ej. WebSocket, cupones y cálculos paralelos)?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p6" id="p6_a" value="A" required>
+                                    <label class="form-check-label" for="p6_a">A) Múltiples flujos independientes en el ViewModel (uno para loading, otro para total, etc.).</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p6" id="p6_b" value="B">
+                                    <label class="form-check-label" for="p6_b">B) Un único estado inmutable donde cada acción pasa por un Reductor puro atómico.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p6" id="p6_c" value="C">
+                                    <label class="form-check-label" for="p6_c">C) Estado de negocio en ViewModel y estado visual transitorio con State Hoisting nativo de Compose.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p6" id="p6_d" value="D">
+                                    <label class="form-check-label" for="p6_d">D) Llamadas directas e imperativas a métodos de la interfaz (showLoading, setTotal).</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P7 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">7. Sincronización de datos entre pantallas distintas:</legend>
+                                <p class="text-muted small mb-2">¿Cómo interactúan los datos cuando el usuario navega entre diferentes secciones de la aplicación?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p7" id="p7_a" value="A" required>
+                                    <label class="form-check-label" for="p7_a">A) Cada pantalla maneja sus propios datos y al salir el estado se descarta o guarda.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p7" id="p7_b" value="B">
+                                    <label class="form-check-label" for="p7_b">B) Múltiples pantallas lejanas deben reflejar el mismo dato en tiempo real (ej. reproductor de música, carrito).</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p7" id="p7_c" value="C">
+                                    <label class="form-check-label" for="p7_c">C) Los datos compartidos se guardan en base de datos local y las pantallas solo observan el repositorio.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p7" id="p7_d" value="D">
+                                    <label class="form-check-label" for="p7_d">D) Los datos se pasan manualmente de una pantalla a la siguiente mediante parámetros simples.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P8 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">8. Frecuencia de actualización y datos en tiempo real:</legend>
+                                <p class="text-muted small mb-2">¿Cómo recibe y refresca la información tu aplicación desde internet?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p8" id="p8_a" value="A" required>
+                                    <label class="form-check-label" for="p8_a">A) Bajo demanda: la app consulta al servidor solo cuando el usuario entra o desliza para actualizar.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p8" id="p8_b" value="B">
+                                    <label class="form-check-label" for="p8_b">B) Flujo continuo en vivo: el servidor empuja datos constantes cada segundo (ej. streaming, chat o GPS).</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p8" id="p8_c" value="C">
+                                    <label class="form-check-label" for="p8_c">C) Múltiples pantallas independientes necesitan reaccionar al mismo flujo global de eventos.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p8" id="p8_d" value="D">
+                                    <label class="form-check-label" for="p8_d">D) Consultas directas sin necesidad de almacenar en caché ni suscripciones reactivas.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P9 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">9. Complejidad de formularios y asistentes por pasos:</legend>
+                                <p class="text-muted small mb-2">¿Cómo es la estructura de los formularios o procesos de captura de datos en la app?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p9" id="p9_a" value="A" required>
+                                    <label class="form-check-label" for="p9_a">A) Formularios directos en una sola pantalla donde cada campo se valida de forma independiente.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p9" id="p9_b" value="B">
+                                    <label class="form-check-label" for="p9_b">B) Procesos guiados de varios pasos donde los datos de un paso dependen estrictamente del anterior.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p9" id="p9_c" value="C">
+                                    <label class="form-check-label" for="p9_c">C) Formularios con reglas financieras, fiscales o legales que deben auditarse con tests unitarios.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p9" id="p9_d" value="D">
+                                    <label class="form-check-label" for="p9_d">D) Formularios básicos rápidos para guardar datos de prueba sin validaciones complejas.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P10 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">10. Detección y reproducción de fallos en producción:</legend>
+                                <p class="text-muted small mb-2">¿Cómo necesita el equipo rastrear y depurar los errores críticos que ocurren en producción?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p10" id="p10_a" value="A" required>
+                                    <label class="form-check-label" for="p10_a">A) Con reportes convencionales de caídas (ej. Crashlytics) que indican la pantalla y la línea del error.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p10" id="p10_b" value="B">
+                                    <label class="form-check-label" for="p10_b">B) Es una app transaccional donde necesitamos grabar la secuencia exacta de acciones para reproducirla en tests.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p10" id="p10_c" value="C">
+                                    <label class="form-check-label" for="p10_c">C) Los errores se detectan y corrigen principalmente con pruebas locales durante el desarrollo.</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <!-- SECCIÓN 3: Almacenamiento, Conectividad y Hardware -->
+                        <div class="mb-4">
+                            <h2 class="h5 fw-bold text-dark border-bottom pb-2 mb-3">3. Almacenamiento, Conectividad y Dispositivo</h2>
+
+                            <!-- P11 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">11. Conectividad y modo sin conexión (Offline-First):</legend>
+                                <p class="text-muted small mb-2">¿Cómo debe funcionar la app si el usuario se queda sin conexión a internet?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p11" id="p11_a" value="A" required>
+                                    <label class="form-check-label" for="p11_a">A) Requiere internet obligatorio; si se corta la conexión muestra pantalla de reintentar o error.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p11" id="p11_b" value="B">
+                                    <label class="form-check-label" for="p11_b">B) Permite seguir usando la app y crear datos; guarda todo en el teléfono y sincroniza sola al volver la señal.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p11" id="p11_c" value="C">
+                                    <label class="form-check-label" for="p11_c">C) Solo permite consultar información que ya se había visto antes en modo lectura.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P12 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">12. Volumen y complejidad del almacenamiento local:</legend>
+                                <p class="text-muted small mb-2">¿Qué tipo y cantidad de datos almacena la aplicación de forma permanente en el teléfono?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p12" id="p12_a" value="A" required>
+                                    <label class="form-check-label" for="p12_a">A) Solo datos básicos de configuración, sesión de usuario y tokens de acceso simples.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p12" id="p12_b" value="B">
+                                    <label class="form-check-label" for="p12_b">B) Una base de datos relacional completa (múltiples tablas, relaciones y consultas complejas con Room).</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p12" id="p12_c" value="C">
+                                    <label class="form-check-label" for="p12_c">C) Todo el estado de la aplicación se serializa para restaurar la sesión exactamente en el mismo punto.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p12" id="p12_d" value="D">
+                                    <label class="form-check-label" for="p12_d">D) Casi no almacena nada en el teléfono; todo se consulta en vivo y se desecha al salir.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P13 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">13. Interacción con hardware y sensores del teléfono (GPS, Bluetooth, Cámara):</legend>
+                                <p class="text-muted small mb-2">¿Cómo se relaciona la aplicación con el hardware y los sensores del teléfono?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p13" id="p13_a" value="A" required>
+                                    <label class="form-check-label" for="p13_a">A) Uso básico u ocasional (ej. abrir la cámara para tomar una foto de perfil o pedir ubicación al presionar un botón).</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p13" id="p13_b" value="B">
+                                    <label class="form-check-label" for="p13_b">B) Lectura continua e intensiva (ej. tracking GPS en vivo mientras el usuario corre, o Bluetooth constante con IoT).</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p13" id="p13_c" value="C">
+                                    <label class="form-check-label" for="p13_c">C) Los sensores se aíslan detrás de interfaces de dominio para probar la lógica con datos simulados.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p13" id="p13_d" value="D">
+                                    <label class="form-check-label" for="p13_d">D) Código directo llamando a las APIs nativas de Android en la misma pantalla sin intermediarios.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P14 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">14. Seguridad, cifrado y protección de datos sensibles:</legend>
+                                <p class="text-muted small mb-2">¿Qué nivel de exigencia de seguridad y privacidad tienen los datos manejados por la app?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p14" id="p14_a" value="A" required>
+                                    <label class="form-check-label" for="p14_a">A) Seguridad estándar de internet: conexiones HTTPS normales y guardado básico de credenciales.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p14" id="p14_b" value="B">
+                                    <label class="form-check-label" for="p14_b">B) Alta seguridad (finanzas o salud): base de datos local cifrada, autenticación biométrica y reglas auditadas.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p14" id="p14_c" value="C">
+                                    <label class="form-check-label" for="p14_c">C) Aislamiento por módulos para que analíticas o librerías externas no tengan acceso a datos protegidos.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p14" id="p14_d" value="D">
+                                    <label class="form-check-label" for="p14_d">D) Prototipo público con datos abiertos o de prueba que no requiere protección especial.</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <!-- SECCIÓN 4: Arquitectura, Reglas y Negocio -->
+                        <div class="mb-4">
+                            <h2 class="h5 fw-bold text-dark border-bottom pb-2 mb-3">4. Reglas de Negocio, Dependencias y Operación</h2>
+
+                            <!-- P15 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">15. Complejidad de las reglas de negocio y pruebas unitarias:</legend>
+                                <p class="text-muted small mb-2">¿Qué tan complejas y críticas son las reglas de negocio de tu aplicación?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p15" id="p15_a" value="A" required>
+                                    <label class="form-check-label" for="p15_a">A) Son operaciones directas de consulta o guardado (CRUD simple, ver listas y formularios básicos).</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p15" id="p15_b" value="B">
+                                    <label class="form-check-label" for="p15_b">B) Lógica densa con cálculos matemáticos, políticas de validación cruzada o conciliación sin conexión.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p15" id="p15_c" value="C">
+                                    <label class="form-check-label" for="p15_c">C) Lógica de pantallas controlada casi en su totalidad por el servidor (Server-Driven UI).</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p15" id="p15_d" value="D">
+                                    <label class="form-check-label" for="p15_d">D) Reglas de negocio que deben compartirse exactamente iguales con una versión de iOS.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P16 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">16. Activación remota de funcionalidades (Feature Flags):</legend>
+                                <p class="text-muted small mb-2">¿La app necesita activar o apagar funcionalidades completas a distancia sin subir nueva versión?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p16" id="p16_a" value="A" required>
+                                    <label class="form-check-label" for="p16_a">A) No, todas las funciones de la app están siempre activas para todos los usuarios.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p16" id="p16_b" value="B">
+                                    <label class="form-check-label" for="p16_b">B) Sí, secciones enteras (ej. nuevo módulo de pagos) deben poder encenderse o apagarse limpiamente.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p16" id="p16_c" value="C">
+                                    <label class="form-check-label" for="p16_c">C) Se manejan condicionales simples de si mostrar u ocultar botones específicos desde el servidor.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p16" id="p16_d" value="D">
+                                    <label class="form-check-label" for="p16_d">D) Las reglas de acceso las dictan políticas de permisos de usuario evaluadas en el dominio.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P17 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">17. Conexión de servicios y gestión de dependencias:</legend>
+                                <p class="text-muted small mb-2">¿Cómo se entregan los repositorios, APIs y servicios a las pantallas de tu aplicación?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p17" id="p17_a" value="A" required>
+                                    <label class="form-check-label" for="p17_a">A) Inyección de dependencias estándar y automática (ej. Hilt en ViewModels) siguiendo a Google.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p17" id="p17_b" value="B">
+                                    <label class="form-check-label" for="p17_b">B) Contratos estrictos de interfaces independientes en cada capa sin conocer la implementación real.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p17" id="p17_c" value="C">
+                                    <label class="form-check-label" for="p17_c">C) Mediante un contenedor o despachador global donde las pantallas solo emiten acciones.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p17" id="p17_d" value="D">
+                                    <label class="form-check-label" for="p17_d">D) Instanciando las clases directamente o mediante Singletons sencillos para evitar complejidad.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P18 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">18. Modelo de monetización y compras en la aplicación:</legend>
+                                <p class="text-muted small mb-2">¿Cómo monetiza la aplicación y qué tan crítico es el flujo de compra o suscripción?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p18" id="p18_a" value="A" required>
+                                    <label class="form-check-label" for="p18_a">A) App gratuita o financiada con anuncios estándar que no alteran el flujo de datos.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p18" id="p18_b" value="B">
+                                    <label class="form-check-label" for="p18_b">B) Suscripciones y compras con validación estricta de recibos en servidor y reglas financieras.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p18" id="p18_c" value="C">
+                                    <label class="form-check-label" for="p18_c">C) Catálogo de productos con precios dinámicos y promociones globales actualizadas en vivo.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p18" id="p18_d" value="D">
+                                    <label class="form-check-label" for="p18_d">D) Es una app académica, interna o demostrativa sin transacciones monetarias.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P19 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">19. Estructura de navegación y profundidad de vistas:</legend>
+                                <p class="text-muted small mb-2">¿Cómo navega el usuario entre las secciones principales de la aplicación?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p19" id="p19_a" value="A" required>
+                                    <label class="form-check-label" for="p19_a">A) Navegación estándar mediante barra inferior (Bottom Navigation) con pantallas planas e independientes.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p19" id="p19_b" value="B">
+                                    <label class="form-check-label" for="p19_b">B) Pantallas declarativas complejas con múltiples modales, hojas inferiores (BottomSheets) y sub-estados.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p19" id="p19_c" value="C">
+                                    <label class="form-check-label" for="p19_c">C) Enrutador externo con reglas de navegación desacopladas de la interfaz (paridad con iOS).</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p19" id="p19_d" value="D">
+                                    <label class="form-check-label" for="p19_d">D) Navegación básica entre actividades tradicionales con botones de volver atrás.</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- P20 -->
+                            <fieldset class="mb-4 p-3 border rounded-3 bg-white">
+                                <legend class="form-label fw-bold float-none w-auto fs-6 mb-2">20. Volumen de tráfico y concurrencia de usuarios:</legend>
+                                <p class="text-muted small mb-2">¿Cuál es el volumen esperado de usuarios activos simultáneos en la aplicación?</p>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p20" id="p20_a" value="A" required>
+                                    <label class="form-check-label" for="p20_a">A) Menos de 1,000 usuarios; app de nicho, local o prototipo de validación de mercado.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p20" id="p20_b" value="B">
+                                    <label class="form-check-label" for="p20_b">B) Entre 1,000 y 50,000 usuarios activos diarios con consumo moderado de servidores.</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="radio" name="p20" id="p20_c" value="C">
+                                    <label class="form-check-label" for="p20_c">C) Más de 100,000 usuarios con alto tráfico donde la eficiencia de memoria y red es vital.</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="nivelExperiencia" class="form-label fw-semibold">Nivel de experiencia del equipo:</label>
+                            <select id="nivelExperiencia" class="form-select" required>
+                                <option value="" selected disabled>Selecciona el nivel técnico...</option>
+                                <option value="junior">Junior (Prioridad simplicidad y guías oficiales de Google)</option>
+                                <option value="mid">Mid-level (Familiarizado con Coroutines, Flow y ViewModel)</option>
+                                <option value="senior">Senior / Staff (Dominio de Clean Architecture y Multi-module)</option>
+                            </select>
+                            <div class="invalid-feedback">Por favor selecciona el nivel de experiencia.</div>
+                        </div>
+
+                        <!-- Observaciones opcionales -->
+                        <div class="mb-4">
+                            <label for="notasAdicionales" class="form-label fw-semibold">Notas o requerimientos especiales (opcional):</label>
+                            <textarea id="notasAdicionales" class="form-control" rows="3" placeholder="Indica librerías mandatorias, limitaciones de tiempo o detalles adicionales..."></textarea>
+                        </div>
+
+                        <!-- Botón de Envío -->
+                        <div class="text-center">
+                            <button type="submit" id="btn-calcular" class="btn text-white px-5 py-3 fw-bold rounded-3 shadow" style="background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%); font-size: 1.1rem;">
+                                <i class="bi bi-cpu me-2"></i>Calcular Diagnóstico de Arquitectura
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Contenedor dinámico de resultados (renderizado por JS) -->
+                    <div id="resultado-diagnostico" class="mt-5 d-none">
+                        <hr class="my-5">
+                        <div class="alert alert-primary border-0 rounded-4 p-4 p-md-5 text-center shadow-sm">
+                            <span class="badge bg-success-subtle text-success border border-success px-3 py-2 rounded-pill mb-2">Diagnóstico Completado</span>
+                            <h2 class="h3 fw-bold text-dark mt-2" id="titulo-arquitectura">Arquitectura Recomendada</h2>
+                            <p class="lead text-secondary mx-auto mb-4" id="resumen-arquitectura" style="max-width: 700px;"></p>
+                            
+                            <div class="row g-3 justify-content-center text-start my-4" id="barras-compatibilidad">
+                                <!-- Barras de compatibilidad inyectadas con JS -->
+                            </div>
+
+                            <a href="#" id="btn-ver-arquitectura" class="btn btn-primary px-4 py-2 rounded-pill fw-semibold shadow-sm">
+                                Explorar Guía de esta Arquitectura <i class="bi bi-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Aprende los principios y patrones de arquitectura para desarrollar aplicaciones Android robustas y mantenibles.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/registro.js"></script>
+</body>
+</html>
