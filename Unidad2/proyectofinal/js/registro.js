@@ -213,47 +213,28 @@ document.addEventListener('DOMContentLoaded', () => {
         resumenArquitectura.textContent = infoGanadora.resumen;
         btnVerArquitectura.href = infoGanadora.pagina;
 
-        // Inyección atómica en lote (Batch DOM Render) evitando layout thrashing
+        // Renderizar las 4 arquitecturas más compatibles con su porcentaje
         barrasContainer.innerHTML = Object.entries(puntajes)
             .sort((a, b) => b[1] - a[1])
+            .slice(0, 4)
             .map(([arqui, pts]) => {
                 const porcentaje = totalPuntos > 0 ? Math.round((pts / totalPuntos) * 100) : 0;
                 const color = infoArquitecturas[arqui]?.color || '#4f46e5';
                 return `
-                    <div class="col-12 col-md-6 mb-2">
+                    <div class="col-12 col-md-6 mb-3">
                         <div class="d-flex justify-content-between small fw-semibold text-dark mb-1">
                             <span>${arqui}</span>
                             <span>${porcentaje}%</span>
                         </div>
-                        <div class="progress" style="height: 10px;">
+                        <div class="progress" style="height: 12px; border-radius: 6px;">
                             <div class="progress-bar" role="progressbar" style="width: ${porcentaje}%; background-color: ${color};" aria-valuenow="${porcentaje}" aria-valuemin="0" aria-valuemax="100" aria-label="Compatibilidad ${arqui}"></div>
                         </div>
                     </div>
                 `;
             }).join('');
 
-        // Mostrar contenedor de resultado
+        // Mostrar contenedor de resultado directamente debajo del formulario y hacer scroll
         resultadoContainer.classList.remove('d-none');
         resultadoContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        // Alerta interactiva SweetAlert2 (Criterio 3.6)
-        Swal.fire({
-            icon: 'success',
-            title: '¡Arquitectura Detectada para tu Proyecto!',
-            html: `
-                <p class="mb-3">El patrón óptimo para tus requerimientos es:</p>
-                <h3 class="fw-bold mb-3" style="color: ${infoGanadora.color};">${infoGanadora.nombre}</h3>
-                <p class="text-muted small">${infoGanadora.resumen}</p>
-            `,
-            confirmButtonText: 'Ver detalles de esta arquitectura',
-            showCancelButton: true,
-            cancelButtonText: 'Revisar diagnóstico en la página',
-            confirmButtonColor: '#4f46e5',
-            cancelButtonColor: '#64748b'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = infoGanadora.pagina;
-            }
-        });
     });
 });
