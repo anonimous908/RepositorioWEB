@@ -20,20 +20,66 @@
                     <p class="text-secondary lead mb-0">Flujo de datos unidireccional con eventos que ascienden y estado inmutable que desciende.</p>
                 </header>
 
-                <section class="mb-4">
+                <!-- 1. Video explicativo -->
+                <section class="mb-5">
+                    <h2 class="h5 fw-bold text-dark mb-3"><i class="bi bi-play-circle text-primary me-2"></i>Animación Explicativa del Flujo</h2>
                     <video controls autoplay loop muted playsinline aria-label="Animación de Compose UDF: el sube y baja" style="width: 100%; display: block; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.10); border: 1px solid #cbd5e1; background: #f8fafc;">
-                        <source src="videos_finales/compose-udf-animacion.webm" type="video/webm">
-                        <source src="videos_finales/compose-udf-animacion.mp4" type="video/mp4">
-                        <p>Tu navegador no soporta video HTML5. Podés reproducir el archivo directamente desde <a href="videos_finales/compose-udf-animacion.mp4">este enlace</a>.</p>
+                        <source src="videos/compose-udf-animacion.webm" type="video/webm">
+                        <source src="videos/compose-udf-animacion.mp4" type="video/mp4">
+                        <p>Tu navegador no soporta video HTML5. Podés reproducir el archivo directamente desde <a href="videos/compose-udf-animacion.mp4">este enlace</a>.</p>
                     </video>
                 </section>
 
-                <section class="text-center my-3">
-                    <img class="img-fluid rounded-3 border shadow-sm p-3 bg-white" src="img/05_compose_udf.svg" alt="5. Compose UDF: El sube y baja">
+                <!-- 2. Introducción conceptual -->
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold text-dark mb-3">¿Qué es Unidirectional Data Flow en Compose?</h2>
+                    <p class="text-secondary leading-relaxed">
+                        En el modelo declarativo de Jetpack Compose, el patrón <strong>Unidirectional Data Flow (UDF)</strong> establece que el <strong>estado fluye hacia abajo</strong> (desde los contenedores o el ViewModel hacia las funciones hijas) y los <strong>eventos fluyen hacia arriba</strong> (desde los componentes interactivos hacia quien gestiona el estado a través de lambdas o callbacks).
+                    </p>
+                    <p class="text-secondary leading-relaxed mb-0">
+                        La práctica central de este patrón es el <strong>State Hoisting</strong> (elevación del estado): los componentes visuales se vuelven libres de estado (<em>stateless</em>), recibiendo únicamente los datos que necesitan para dibujarse y delegando la responsabilidad de mutar variables a niveles superiores.
+                    </p>
+                </section>
+
+                <!-- 3. Infografía y Diagrama -->
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold text-dark mb-3"><i class="bi bi-diagram-3 text-primary me-2"></i>Diagrama Conceptual</h2>
+                    <div class="text-center">
+                        <img class="img-fluid rounded-3 border shadow-sm p-3 bg-white" src="img/05_compose_udf.svg" alt="5. Compose UDF: El sube y baja">
+                    </div>
+                </section>
+
+                <!-- 4. Ventajas en Proyectos Reales -->
+                <section>
+                    <h2 class="h4 fw-bold text-dark mb-3">Ventajas en Proyectos Reales</h2>
+                    <ul class="list-group list-group-flush border rounded-3">
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Composables Sin Efectos Secundarios:</strong> Los componentes <em>stateless</em> son predecibles y fáciles de renderizar en vistas previas con <code>@Preview</code>, agilizando el diseño de sistemas de diseño atómicos sin levantar lógica pesada.
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Recomposición Inteligente a 60/120 FPS:</strong> Compose omite (<em>skipping</em>) automáticamente el redibujado de composables cuyas entradas inmutables no han cambiado, optimizando el consumo de CPU y batería del dispositivo.
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Sincronización Garantizada:</strong> Se eliminan discrepancias donde un campo de texto o interruptor muestra un valor que no coincide con la base de datos o el estado interno de la aplicación.
+                            </div>
+                        </li>
+                    </ul>
                 </section>
             </article>
         </div>
     </main>
+
+    <footer class="py-4 text-center text-secondary small border-top bg-white">
+        <p class="mb-0">© 2026 Android Arch - Guía de Arquitectura de Aplicaciones</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

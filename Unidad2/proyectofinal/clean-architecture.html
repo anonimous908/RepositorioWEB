@@ -20,20 +20,66 @@
                     <p class="text-secondary lead mb-0">Desacoplamiento total de la lógica de negocio frente a frameworks, UI y fuentes de datos externas.</p>
                 </header>
 
-                <section class="mb-4">
+                <!-- 1. Video explicativo -->
+                <section class="mb-5">
+                    <h2 class="h5 fw-bold text-dark mb-3"><i class="bi bi-play-circle text-primary me-2"></i>Animación Explicativa del Flujo</h2>
                     <video controls autoplay loop muted playsinline aria-label="Animación de Clean Architecture: las cuatro murallas" style="width: 100%; display: block; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.10); border: 1px solid #cbd5e1; background: #f8fafc;">
-                        <source src="videos_finales/clean-architecture-animacion.webm" type="video/webm">
-                        <source src="videos_finales/clean-architecture-animacion.mp4" type="video/mp4">
-                        <p>Tu navegador no soporta video HTML5. Podés reproducir el archivo directamente desde <a href="videos_finales/clean-architecture-animacion.mp4">este enlace</a>.</p>
+                        <source src="videos/clean-architecture-animacion.webm" type="video/webm">
+                        <source src="videos/clean-architecture-animacion.mp4" type="video/mp4">
+                        <p>Tu navegador no soporta video HTML5. Podés reproducir el archivo directamente desde <a href="videos/clean-architecture-animacion.mp4">este enlace</a>.</p>
                     </video>
                 </section>
 
-                <section class="text-center my-3">
-                    <img class="img-fluid rounded-3 border shadow-sm p-3 bg-white" src="img/03_clean_architecture.svg" alt="3. Clean Architecture: Las 4 murallas de protección">
+                <!-- 2. Introducción conceptual -->
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold text-dark mb-3">¿Qué es Clean Architecture?</h2>
+                    <p class="text-secondary leading-relaxed">
+                        Formulada por Robert C. Martin ("Uncle Bob"), <strong>Clean Architecture</strong> estructura las aplicaciones en capas concéntricas con una premisa inquebrantable conocida como la <strong>Regla de Dependencia</strong>: las dependencias del código fuente solo pueden apuntar hacia adentro, apuntando siempre hacia las reglas de negocio de alto nivel.
+                    </p>
+                    <p class="text-secondary leading-relaxed mb-0">
+                        El núcleo de la aplicación (la capa de <em>Domain</em> con sus entidades y casos de uso) no conoce detalles del sistema operativo, librerías de terceros, bases de datos o pantallas. Toda comunicación hacia el exterior se realiza mediante abstracciones e inversión de control (<em>Dependency Inversion Principle</em>).
+                    </p>
+                </section>
+
+                <!-- 3. Infografía y Diagrama -->
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold text-dark mb-3"><i class="bi bi-diagram-3 text-primary me-2"></i>Diagrama Conceptual</h2>
+                    <div class="text-center">
+                        <img class="img-fluid rounded-3 border shadow-sm p-3 bg-white" src="img/03_clean_architecture.svg" alt="3. Clean Architecture: Las 4 murallas de protección">
+                    </div>
+                </section>
+
+                <!-- 4. Ventajas en Proyectos Reales -->
+                <section>
+                    <h2 class="h4 fw-bold text-dark mb-3">Ventajas en Proyectos Reales</h2>
+                    <ul class="list-group list-group-flush border rounded-3">
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Independencia Total de Frameworks:</strong> Las reglas de negocio no quedan atadas a componentes de Android. Si se decide migrar de Retrofit a Ktor, o de Room a SQLDelight, los casos de uso permanecen inalterados.
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Preparado para Kotlin Multiplatform (KMP):</strong> Al mantener el dominio y la lógica central en Kotlin puro sin dependencias de Android, esas capas pueden compilarse y reutilizarse en iOS, Web o Desktop.
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Pruebas Unitarias Instantáneas:</strong> Casos de uso y entidades se evalúan en milisegundos directamente sobre la JVM, eliminando la necesidad de emuladores lentos o entornos instrumentados para validar la lógica del negocio.
+                            </div>
+                        </li>
+                    </ul>
                 </section>
             </article>
         </div>
     </main>
+
+    <footer class="py-4 text-center text-secondary small border-top bg-white">
+        <p class="mb-0">© 2026 Android Arch - Guía de Arquitectura de Aplicaciones</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

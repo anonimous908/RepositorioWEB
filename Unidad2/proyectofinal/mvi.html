@@ -20,20 +20,66 @@
                     <p class="text-secondary lead mb-0">Flujo unidireccional y estados inmutables conducidos por intenciones explícitas del usuario.</p>
                 </header>
 
-                <section class="mb-4">
+                <!-- 1. Video explicativo -->
+                <section class="mb-5">
+                    <h2 class="h5 fw-bold text-dark mb-3"><i class="bi bi-play-circle text-primary me-2"></i>Animación Explicativa del Flujo</h2>
                     <video controls autoplay loop muted playsinline aria-label="Animación de MVI: circuito unidireccional" style="width: 100%; display: block; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.10); border: 1px solid #cbd5e1; background: #f8fafc;">
-                        <source src="videos_finales/mvi-animacion.webm" type="video/webm">
-                        <source src="videos_finales/mvi-animacion.mp4" type="video/mp4">
-                        <p>Tu navegador no soporta video HTML5. Podés reproducir el archivo directamente desde <a href="videos_finales/mvi-animacion.mp4">este enlace</a>.</p>
+                        <source src="videos/mvi-animacion.webm" type="video/webm">
+                        <source src="videos/mvi-animacion.mp4" type="video/mp4">
+                        <p>Tu navegador no soporta video HTML5. Podés reproducir el archivo directamente desde <a href="videos/mvi-animacion.mp4">este enlace</a>.</p>
                     </video>
                 </section>
 
-                <section class="text-center my-3">
-                    <img class="img-fluid rounded-3 border shadow-sm p-3 bg-white" src="img/02_mvi.svg" alt="2. MVI: El circuito de una sola dirección">
+                <!-- 2. Introducción conceptual -->
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold text-dark mb-3">¿Qué es el patrón MVI?</h2>
+                    <p class="text-secondary leading-relaxed">
+                        <strong>Model-View-Intent (MVI)</strong> es un patrón arquitectónico diseñado para garantizar un flujo de datos estrictamente cíclico y cerrado (<em>Unidirectional Data Flow</em>). Nace como evolución frente a arquitecturas donde la interfaz debe coordinar múltiples estados asíncronos independientes, unificando toda la información de la pantalla en un único estado inmutable.
+                    </p>
+                    <p class="text-secondary leading-relaxed mb-0">
+                        En MVI, las acciones del usuario no mutan variables directamente: se despachan como <strong>intenciones explícitas</strong> (<em>Intents</em>, representadas comúnmente con <code>sealed interface</code> en Kotlin). El modelo procesa la intención, ejecuta la lógica de negocio y emite una nueva copia inmutable del estado que la vista renderiza sin ambigüedades.
+                    </p>
+                </section>
+
+                <!-- 3. Infografía y Diagrama -->
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold text-dark mb-3"><i class="bi bi-diagram-3 text-primary me-2"></i>Diagrama Conceptual</h2>
+                    <div class="text-center">
+                        <img class="img-fluid rounded-3 border shadow-sm p-3 bg-white" src="img/02_mvi.svg" alt="2. MVI: El circuito de una sola dirección">
+                    </div>
+                </section>
+
+                <!-- 4. Ventajas en Proyectos Reales -->
+                <section>
+                    <h2 class="h4 fw-bold text-dark mb-3">Ventajas en Proyectos Reales</h2>
+                    <ul class="list-group list-group-flush border rounded-3">
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Estado Único Predecible (Single State Stream):</strong> Se erradican las condiciones de carrera entre variables independientes. La interfaz solo observa un flujo de estado consolidado que representa la pantalla completa en cada instante.
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Reproducibilidad y Depuración Forense:</strong> Al ser cada cambio de pantalla el resultado directo de una intención explícita, es posible registrar la secuencia de eventos (<em>Time-travel debugging</em>) y recrear errores reportados en producción con exactitud.
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Comportamiento Determinista en UI:</strong> La inmutabilidad garantiza que la vista sea una función matemática pura del estado, impidiendo que existan estados intermedios inconsistentes o pantallas parcialmente actualizadas.
+                            </div>
+                        </li>
+                    </ul>
                 </section>
             </article>
         </div>
     </main>
+
+    <footer class="py-4 text-center text-secondary small border-top bg-white">
+        <p class="mb-0">© 2026 Android Arch - Guía de Arquitectura de Aplicaciones</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

@@ -20,20 +20,66 @@
                     <p class="text-secondary lead mb-0">División del sistema en módulos independientes para optimizar tiempos de compilación y trabajo en equipo.</p>
                 </header>
 
-                <section class="mb-4">
+                <!-- 1. Video explicativo -->
+                <section class="mb-5">
+                    <h2 class="h5 fw-bold text-dark mb-3"><i class="bi bi-play-circle text-primary me-2"></i>Animación Explicativa del Flujo</h2>
                     <video controls autoplay loop muted playsinline aria-label="Animación de Modular: dividir una app en habitaciones" style="width: 100%; display: block; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.10); border: 1px solid #cbd5e1; background: #f8fafc;">
-                        <source src="videos_finales/modular-animacion.webm" type="video/webm">
-                        <source src="videos_finales/modular-animacion.mp4" type="video/mp4">
-                        <p>Tu navegador no soporta video HTML5. Podés reproducir el archivo directamente desde <a href="videos_finales/modular-animacion.mp4">este enlace</a>.</p>
+                        <source src="videos/modular-animacion.webm" type="video/webm">
+                        <source src="videos/modular-animacion.mp4" type="video/mp4">
+                        <p>Tu navegador no soporta video HTML5. Podés reproducir el archivo directamente desde <a href="videos/modular-animacion.mp4">este enlace</a>.</p>
                     </video>
                 </section>
 
-                <section class="text-center my-3">
-                    <img class="img-fluid rounded-3 border shadow-sm p-3 bg-white" src="img/04_modular.svg" alt="4. Modular: Dividir una app en habitaciones">
+                <!-- 2. Introducción conceptual -->
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold text-dark mb-3">¿Qué es la Arquitectura Modular?</h2>
+                    <p class="text-secondary leading-relaxed">
+                        La <strong>Arquitectura Modular</strong> descompone un proyecto monolítico en submódulos de Gradle desacoplados. En lugar de compilar un único bloque masivo, la base de código se segmenta por funcionalidad (<em>feature modules</em> como <code>:feature:login</code>), por capas transversales (<code>:core:network</code>, <code>:core:database</code>) y módulos de diseño (<code>:core:designsystem</code>).
+                    </p>
+                    <p class="text-secondary leading-relaxed mb-0">
+                        Este enfoque previene que el crecimiento de la aplicación degrade la experiencia de desarrollo, imponiendo límites arquitectónicos estrictos en el grafo de dependencias de Gradle que evitan el acoplamiento cruzado accidental entre pantallas distintas.
+                    </p>
+                </section>
+
+                <!-- 3. Infografía y Diagrama -->
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold text-dark mb-3"><i class="bi bi-diagram-3 text-primary me-2"></i>Diagrama Conceptual</h2>
+                    <div class="text-center">
+                        <img class="img-fluid rounded-3 border shadow-sm p-3 bg-white" src="img/04_modular.svg" alt="4. Modular: Dividir una app en habitaciones">
+                    </div>
+                </section>
+
+                <!-- 4. Ventajas en Proyectos Reales -->
+                <section>
+                    <h2 class="h4 fw-bold text-dark mb-3">Ventajas en Proyectos Reales</h2>
+                    <ul class="list-group list-group-flush border rounded-3">
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Compilación Incremental y Caché Remota:</strong> Gradle solo recompila los módulos alterados por el cambio actual, reutilizando artefactos cacheados y reduciendo tiempos de construcción en CI/CD drásticamente.
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Encapsulamiento Fuerte con Modificadores Kotlin:</strong> Permite utilizar visibilidad <code>internal</code> para ocultar clases y lógicas de implementación privadas, exponiendo únicamente contratos públicos a otros módulos.
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Escalabilidad en Equipos Multidisciplinarios:</strong> Varios equipos o ingenieros pueden trabajar simultáneamente en funcionalidades aisladas sin interferencias ni conflictos masivos al fusionar ramas en Git.
+                            </div>
+                        </li>
+                    </ul>
                 </section>
             </article>
         </div>
     </main>
+
+    <footer class="py-4 text-center text-secondary small border-top bg-white">
+        <p class="mb-0">© 2026 Android Arch - Guía de Arquitectura de Aplicaciones</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
