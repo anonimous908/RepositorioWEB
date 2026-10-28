@@ -237,4 +237,26 @@ document.addEventListener('DOMContentLoaded', () => {
         resultadoContainer.classList.remove('d-none');
         resultadoContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+
+    // Retroalimentación de opinión del usuario (Criterio 3.5 & 3.6)
+    const btnEnviarOpinion = document.querySelector('#btn-enviar-opinion');
+    const opinionTextarea = document.querySelector('#opinionFormulario');
+    const mensajeOpinion = document.querySelector('#mensaje-opinion');
+
+    btnEnviarOpinion?.addEventListener('click', () => {
+        const texto = opinionTextarea?.value.trim();
+        if (!texto) {
+            opinionTextarea?.classList.add('is-invalid');
+            return;
+        }
+        opinionTextarea?.classList.remove('is-invalid');
+        try {
+            localStorage.setItem('opinionDiagnostico', texto);
+        } catch (e) {
+            console.warn('LocalStorage error:', e);
+        }
+        mensajeOpinion?.classList.remove('d-none');
+        btnEnviarOpinion.disabled = true;
+        btnEnviarOpinion.innerHTML = '<i class="bi bi-check2 me-1"></i>Enviado';
+    });
 });

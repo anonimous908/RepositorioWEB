@@ -20,7 +20,9 @@
                     <p class="text-secondary lead mb-0">Un único almacén de verdad (Single Source of Truth) inmutable gestionado mediante funciones reductoras puras.</p>
                 </header>
 
-                <section class="mb-4">
+                <!-- 1. Video explicativo -->
+                <section class="mb-5">
+                    <h2 class="h5 fw-bold text-dark mb-3"><i class="bi bi-play-circle text-primary me-2"></i>Animación Explicativa del Flujo</h2>
                     <video controls autoplay loop muted playsinline aria-label="Animación de MVU y Redux: el juego de mesa" style="width: 100%; display: block; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.10); border: 1px solid #cbd5e1; background: #f8fafc;">
                         <source src="videos/mvu-redux-animacion.webm" type="video/webm">
                         <source src="videos/mvu-redux-animacion.mp4" type="video/mp4">
@@ -28,12 +30,56 @@
                     </video>
                 </section>
 
-                <section class="text-center my-3">
-                    <img class="img-fluid rounded-3 border shadow-sm p-3 bg-white" src="img/06_mvu_redux.svg" alt="6. MVU / Redux: El juego de mesa">
+                <!-- 2. Introducción conceptual -->
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold text-dark mb-3">¿Qué es el patrón MVU / Redux?</h2>
+                    <p class="text-secondary leading-relaxed">
+                        Inspirado en la arquitectura Elm y popularizado en entornos funcionales, el patrón <strong>Model-View-Update (MVU)</strong> o arquitectura Redux se rige por un principio estricto: la aplicación completa se modela como una máquina de estados determinista gobernada por una <strong>única fuente de verdad</strong> (<em>Store</em>) completamente inmutable.
+                    </p>
+                    <p class="text-secondary leading-relaxed mb-0">
+                        La vista únicamente despacha acciones intencionales. Toda mutación de datos se delega a una función <strong>reductora pura</strong> (<em>Reducer</em>) con la firma <code>(EstadoAnterior, Acción) -> NuevoEstado</code>. Los efectos secundarios asíncronos (llamadas de red o disco) quedan confinados en capas intermedias (<em>Middlewares</em>), garantizando un flujo matemáticamente predecible.
+                    </p>
+                </section>
+
+                <!-- 3. Infografía y Diagrama -->
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold text-dark mb-3"><i class="bi bi-diagram-3 text-primary me-2"></i>Diagrama Conceptual</h2>
+                    <div class="text-center">
+                        <img class="img-fluid rounded-3 border shadow-sm p-3 bg-white" src="img/06_mvu_redux.svg" alt="6. MVU / Redux: El juego de mesa">
+                    </div>
+                </section>
+
+                <!-- 4. Ventajas en Proyectos Reales -->
+                <section>
+                    <h2 class="h4 fw-bold text-dark mb-3">Ventajas en Proyectos Reales</h2>
+                    <ul class="list-group list-group-flush border rounded-3">
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Trazabilidad y Time-Travel Debugging Total:</strong> Al ser cada cambio de estado una función pura registrada como una acción discreta, es trivial guardar el historial de ejecución, pausar, rebobinar y reproducir cualquier bug de usuario paso por paso.
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Funciones Reductoras Matemáticamente Puras:</strong> Los reducers carecen de efectos secundarios o dependencias de I/O, lo que permite evaluar el 100% de la lógica de negocio mediante pruebas unitarias instantáneas sin necesidad de dobles de prueba ni mocks.
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-start gap-2 py-3">
+                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                            <div>
+                                <strong>Cero Inconsistencias de Estado Global:</strong> Múltiples pantallas o componentes que dependen de los mismos datos leen siempre del mismo Store centralizado, erradicando discrepancias entre vistas abiertas simultáneamente.
+                            </div>
+                        </li>
+                    </ul>
                 </section>
             </article>
         </div>
     </main>
+
+    <footer class="py-4 text-center text-secondary small border-top bg-white">
+        <p class="mb-0">© 2026 Android Arch - Guía de Arquitectura de Aplicaciones</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
